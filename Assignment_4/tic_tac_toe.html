@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .blue{
+                color: azure;
+                width: 100px;
+                height: 100px;
+                
+            }
+            body{
+              background-color: black;
+
+            }
+        </style>
+        <title>Tic_Tac_Toe</title></head>
+    <body>
+      <p><strong style="color: cyan;font-size: x-large;">TIC_TAC_TOE</strong></p>
+        <script>
+          var x=Math.random();
+          //document.write(x);
+          var value;
+          if(x>.5)
+          {
+             value="X";
+          }
+          else value="0";
+          var player=1;
+           
+           // var ans=0;
+            arr=[-1,-1,-1,-1,-1,-1,-1,-1,-1];
+        </script>
+        <input type="button" id="a" class="blue" value="" style="font-size: 105px; color: #000;" onclick="action('a',0)">
+        <input type="button" id="b" class="blue" value="" style="font-size: 105px; color: #000;" onclick="check(),action('b',1)">
+        <input type="button" id="c" class="blue" value="" style="font-size: 105px; color: #000;" onclick="action('c',2)"><br>
+        <input type="button" id="d" class="blue" value="" style="font-size: 105px; color: #000;" onclick="action('d',3)">
+        <input type="button" id="e" class="blue" value="" style="font-size: 105px; color: #000;" onclick="action('e',4)">
+        <input type="button" id="f" class="blue" value="" style="font-size: 105px; color: #000;" onclick="action('f',5)"><br>
+        <input type="button" id="g" class="blue" value="" style="font-size: 105px; color: #000;" onclick="action('g',6)">
+        <input type="button" id="h" class="blue" value="" style="font-size: 105px; color: #000;" onclick="action('h',7)">
+        <input type="button" id="i" class="blue" value="" style="font-size: 105px; color: #000;" onclick="action('i',8)">
+        <script>
+            function action( y,index)
+            {
+              var x=  document.getElementById(y);
+              x.value=value;
+              arr[index]=player;
+              setInterval(5000000);
+              check();
+              if(player==2)
+              player=1;
+              else player=2;
+              if(value=="X")
+              value="0";
+              else value="X";
+              /*if(ans==0)
+             { x.value="x";
+             arr[index]=0;
+             ans=1;
+            }
+              else {x.value="0";
+              arr[index]=1;
+              ans=0;}
+              */
+             
+              }
+              function check()
+              {
+                var j=0;
+                      if((arr[j]==arr[j+1])&&(arr[j]==arr[j+2])&&arr[j]!=-1)
+                      {
+                        if(window.confirm('Player '+player+' wins'))
+                        {
+                          window.location.reload();
+                        }
+                      }
+                      if((arr[j]==arr[j+3])&&(arr[j+6]==arr[j])&&(arr[j]!=-1))
+                      {
+                        if(window.confirm('Player '+player+' wins'))
+                        {
+                          window.location.reload();
+                        }
+
+                      }
+                      if((arr[j]==arr[j+4])&&(arr[j+8]==arr[j])&&(arr[j]!=-1))
+                      {
+                        if(window.confirm('Player '+player+' wins'))
+                        {
+                          window.location.reload();
+                        }
+
+                      }
+                      if((arr[j+2]==arr[j+5])&&(arr[j+8]==arr[j+2])&&(arr[j+2]!=-1))
+                      {
+                        if(window.confirm('Player '+player+' wins'))
+                        {
+                          window.location.reload();
+                        }
+                      }
+                      if((arr[j+2]==arr[j+4])&&(arr[j+6]==arr[j+2])&&(arr[j+2]!=-1))
+                      {
+                        if(window.confirm('Player '+player+' wins'))
+                        {
+                          window.location.reload();
+                        }
+
+                      }
+                      if((arr[j+1]==arr[j+4])&&(arr[j+1]==arr[j+7])&&(arr[j+1]!=-1))
+                      {
+                        if(window.confirm('Player '+player+' wins'))
+                        {
+                          window.location.reload();
+                        }
+                      }
+                      if((arr[j+3]==arr[j+4])&&(arr[j+3]==arr[j+5])&&(arr[j+3]!=-1))
+                      {
+                        if(window.confirm('Player '+player+' wins'))
+                        {
+                          window.location.reload();
+                        }
+                      }
+                      if((arr[j+6]==arr[j+7])&&(arr[j+6]==arr[j+8])&&(arr[j+6]!=-1))
+                      {
+                        if(widow.confirm('Player '+player+' wins'))
+                        {
+                          window.location.reload();
+                        }
+                      }
+                      for(i=0;i<arr.length;i++)
+                      {
+                        if(arr[i]==-1)
+                        break;
+                      }
+                      if(i==arr.length)
+                      {
+                        if(window.confirm('Game ended in a tie'))
+                        {
+                          window.location.reload();
+                        }
+
+                      }
+    
+              }
+            
+        </script>
+
+        </body>
+                  
+          
+</html>
